@@ -1,0 +1,20 @@
+{
+    "name": "riv4wi/sbApi",
+    "description": "API Restful used for testing of skills",
+    "type": "Project",
+    "authors": [
+        {
+            "name": "riv4wi",
+            "email": "riv4wi@gmail.com"
+        }
+    ],
+
+    "require": {
+    },
+
+    "autoload":{
+        "psr-4": {
+            "sbApi\\" : "core/"
+        }
+    }
+}
