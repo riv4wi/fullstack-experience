@@ -4,12 +4,12 @@
 RewriteEngine On
 
 # Para metodo GET, POST, PUT
-RewriteRule ^api/([a-zA-Z]+)$ controller.php
-RewriteRule ^api/([a-zA-Z]+)/$ controller.php
+RewriteRule ^api/([a-zA-Z]+)$ entryPoint.php
+RewriteRule ^api/([a-zA-Z]+)/$ entryPoint.php
 
 # Para metodo GET por Id y metodo DELETE
-RewriteRule ^api/([a-zA-Z]+)/([0-9]+)$ controller.php
-RewriteRule ^api/([a-zA-Z]+)/([0-9]+)/$ controller.php
+RewriteRule ^api/([a-zA-Z]+)/([0-9]+)$ entryPoint.php
+RewriteRule ^api/([a-zA-Z]+)/([0-9]+)/$ entryPoint.php
 
 # Expresiones regulares
 ## Alfanumericos | ([a-zA-Z0-9]+)
