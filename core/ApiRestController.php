@@ -154,6 +154,7 @@ class ApiRestController{
         }
     }
 
+
     /**
      * Is responsible for executing the course of actions for the POST method.
      *
@@ -216,7 +217,9 @@ class ApiRestController{
 
             /* If $info is different from 0, the element exists, therefore proceed to modify */
             if (count($info) != 0) {
-                $array = json_decode($this->bodyRequest, true);
+                /* Decode the body of the request and save it in an array */
+                parse_str(html_entity_decode($this->bodyRequest), $array);
+
                 $this->api->data = $this->renderizeData(array_keys($array), array_values($array));
                 $this->api->id = $this->id;
                 $data = $this->api->put();
@@ -276,7 +279,6 @@ class ApiRestController{
     }
 
 
-    
     /**
      * This function create an instance of ApiRest class.
      *
