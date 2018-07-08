@@ -59,11 +59,8 @@ class ApiRest extends db_model implements iApiRest
      */
     public function post()
     {
-        return $this->set_query(sprintf("
-            INSERT INTO 
-            %s
-            %s",
-            $this->entity, $this->data));
+        $sql=sprintf("INSERT INTO  %s (%s", $this->entity, $this->data);
+        return $this->set_query($sql);
     }
 
     /**
