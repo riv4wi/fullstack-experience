@@ -265,7 +265,7 @@ class ApiRestController{
                     if (count($info) == 0) {
                         $this->print_json(404, "Not Found", null);
                     } else {
-                        $this->print_json(200, "OK", $info);
+                        $this->print_json(200, "Item deleted", $info);
                     }
 
                 } else {
