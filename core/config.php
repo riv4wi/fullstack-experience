@@ -1,6 +1,6 @@
 <?php
 
-namespace sbApi;
+namespace Api;
 
 /**
  * Configuration of the connection to database.
@@ -22,4 +22,4 @@ define("DB_USER", "riv4wi");
 define("DB_PASS", "1234");
 
 // Database name
-define("DB_NAME", "scatchbling");
+define("DB_NAME", "fullstack_experience");

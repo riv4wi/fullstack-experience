@@ -1,6 +1,6 @@
 <?php
 
-namespace sbApi;
+namespace Api;
 
 /**
  * Class that executes calls to the execution functions to interact with the Database.

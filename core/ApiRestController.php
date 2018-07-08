@@ -1,6 +1,6 @@
 <?php
 
-namespace sbApi;
+namespace Api;
 
 /**
  * Receives the request and processes it.

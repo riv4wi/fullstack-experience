@@ -1,6 +1,6 @@
 <?php
 
-namespace sbApi;
+namespace Api;
 
 use Mysqli;
 

@@ -1,5 +1,5 @@
 {
-    "name": "riv4wi/sbApi",
+    "name": "riv4wi/Api",
     "description": "API Restful used for testing of skills",
     "type": "Project",
     "authors": [
@@ -14,7 +14,7 @@
 
     "autoload":{
         "psr-4": {
-            "sbApi\\" : "core/"
+            "Api\\" : "core/"
         }
     }
 }
