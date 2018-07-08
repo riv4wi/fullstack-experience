@@ -34,7 +34,8 @@ namespace Api;
  * @version 1.0
  */
 
-class ApiRestController{
+class ApiRestController
+{
 
     private $array;
     private $bodyRequest;
@@ -250,7 +251,8 @@ class ApiRestController{
      *
      * @access public
      */
-    function actionsForDeleteMethod(){
+    function actionsForDeleteMethod()
+    {
         if (isset($this->id)) {
             $info = $this->api->get($this->id);
 
@@ -291,7 +293,7 @@ class ApiRestController{
         return $object;
     }
 
-    
+
     /**
      * This function renders the information that will be sent to the database
      *
@@ -302,13 +304,13 @@ class ApiRestController{
      */
     function renderizeData($keys, $values)
     {
-        $str='';
+        $str = '';
         switch ($_SERVER['REQUEST_METHOD']) {
             case 'POST':
+                $fields = count($keys) - 1;
                 foreach ($keys as $key => $value) {
-                    if ($key == count($keys) - 1) {
-                        $str = $str . $value . ") VALUES (";
-
+                    if ($key == $fields) {
+                        $str = $fields > 0 ? $str . $value . ") VALUES (" : $str ."(". $value . ") VALUES (";
                         foreach ($values as $key => $value) {
                             if ($key == count($values) - 1) {
                                 $str = $str . "'" . $value . "')";
