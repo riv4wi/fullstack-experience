@@ -1,4 +1,4 @@
-DROP TABLE work_experiences;
+DROP TABLE experiences;
 DROP TABLE countries;
 
 CREATE TABLE `countries` (
@@ -7,7 +7,7 @@ CREATE TABLE `countries` (
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `work_experiences` (
+CREATE TABLE `experiences` (
   `profile_id` int (10) NOT NULL,
   `id` int (10) NOT NULL AUTO_INCREMENT,
   `company` varchar(200) NOT NULL,
@@ -17,13 +17,13 @@ CREATE TABLE `work_experiences` (
   `level` varchar(20) NOT NULL,
   `job_description` varchar(200) NOT NULL,
   `dependents` int,
-  `from` DATE,
-  `until` DATE,
-  `duration` varchar(200) NOT NULL,
+  `start` DATE,
+  `ending` DATE,
+  `duration` varchar(200),
   `reference_contact` varchar(200) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `country_company` (`country_company`),
-  CONSTRAINT `work_experiences_ibfk_country` FOREIGN KEY (`country_company`) REFERENCES `countries` (`id`) ON UPDATE CASCADE
+  CONSTRAINT `experiences_ibfk_country` FOREIGN KEY (`country_company`) REFERENCES `countries` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `countries` VALUES(1, 'Afganistán');
