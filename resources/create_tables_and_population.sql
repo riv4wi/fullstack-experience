@@ -8,7 +8,6 @@ PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `experiences` (
-  `profile_id` int (10) NOT NULL,
   `id` int (10) NOT NULL AUTO_INCREMENT,
   `company` varchar(200) NOT NULL,
   `company_activity` varchar(200) NOT NULL,
