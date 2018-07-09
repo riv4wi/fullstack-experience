@@ -1,0 +1,67 @@
+html {
+    font-size: 100%; /* 100% = 16px */
+}
+
+h4{
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 1rem 0 1rem;
+}
+
+.box-experience-title {
+    font-size: 1.5rem;
+    width: 100%;
+    left: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #3F3F3F;
+    font-weight: bold;
+}
+
+.box-experience-subtitle {
+    font-size: 1.2rem;
+    color: #3F3F3F;
+    margin: 0;
+    font-weight: bold;
+    line-height: 1rem;
+}
+
+.row{
+    font-size: 0.7rem;
+    color: #545454;
+}
+
+.row b{
+    color: #3F3F3F;
+}
+
+.cv-modify-btn, a[class^="modify"], .cv-delete-btn, a[class^="remove"], .cv-add-btn, a[class^="add"] {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    text-indent: -99999px;
+    z-index: 10;
+    /*margin-top: 25px;*/
+}
+
+.cv-modify-btn, a[class^="modify"] {
+    background: url(../img/mod.svg) no-repeat;
+}
+
+.cv-delete-btn, a[class^="remove"] {
+    background: url(../img/minus.svg) no-repeat;
+}
+
+.cv-add-btn, a[class^="add"] {
+    background: url(../img/plus.svg) no-repeat;
+    text-indent: 99999px;
+    margin-right: 1rem;
+}
+
+.control-label {
+    margin: 0;
+    padding: 0;
+    font-size: 0.55rem;
+}
