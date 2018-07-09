@@ -1,0 +1,78 @@
+<RestClientRequest>
+  <option name="biscuits">
+    <list />
+  </option>
+  <option name="httpMethod" value="PUT" />
+  <option name="urlBase" value="http://fullstack.com" />
+  <option name="urlPath" value="/api/experiences/2" />
+  <option name="headers">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="Accept" />
+        <option name="value" value="application/json" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="Cache-Control" />
+        <option name="value" value="no-cache" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="Content-Type" />
+        <option name="value" value="application/x-www-form-urlencoded" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parameters">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="profile_id" />
+        <option name="value" value="1" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="company" />
+        <option name="value" value="Coca-cola" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="company_activity" />
+        <option name="value" value="Comercio" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="country_company" />
+        <option name="value" value="1" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="job_title" />
+        <option name="value" value="Desarrollador" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="level" />
+        <option name="value" value="semi-senior" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="job_description" />
+        <option name="value" value="Programar, programar y programar" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="dependents" />
+        <option name="value" value="2" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="start" />
+        <option name="value" value="2014-04-11" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="ending" />
+        <option name="value" value="2016-09-01" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="reference_contact" />
+        <option name="value" value="Fulanito" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parametersEnabled" value="true" />
+  <option name="haveTextToSend" value="false" />
+  <option name="haveFileToSend" value="false" />
+  <option name="isFileUpload" value="false" />
+  <option name="textToSend" value="" />
+  <option name="filesToSend" value="" />
+</RestClientRequest>

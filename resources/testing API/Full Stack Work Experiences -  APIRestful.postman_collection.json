@@ -1,0 +1,538 @@
+{
+	"info": {
+		"_postman_id": "9c30ce5b-f69b-42ea-95a1-bb761019a226",
+		"name": "Full Stack Work Experiences -  APIRestful",
+		"description": "API for testing skills in php. \n\nA new company, called “scatchbling” (SB) was formed. SB would like to have customers and\nother clients access an API to list all of the back scratchers that they are selling on the market.\nIn order to complete this, you, the developer, must create a simple RESTful interface that will\nprovide access to the company’s database.\n\nA simple example of a backscratcher for sale is:\nName | Description | Size | Price\n“The Itcher” | “Scratch any itch” | “XL” | $27.00\n“The Blinger” | “Diamonds” | “L” | $343.00\n“Glitz and Gold” | “Gold handle and fancy emeralds make this shine” | “XL,L,M,S” | $4343.00",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all experiences",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://fullstack.com/api/experiences",
+					"protocol": "http",
+					"host": [
+						"fullstack",
+						"com"
+					],
+					"path": [
+						"api",
+						"experiences"
+					]
+				},
+				"description": "Get all experiences"
+			},
+			"response": []
+		},
+		{
+			"name": "Get an experience by its id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://fullstack.com/api/experiences/1",
+					"protocol": "http",
+					"host": [
+						"fullstack",
+						"com"
+					],
+					"path": [
+						"api",
+						"experiences",
+						"1"
+					]
+				},
+				"description": "Get an experience by its id"
+			},
+			"response": []
+		},
+		{
+			"name": "Add a work experience",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "Identifier of work experience",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "company",
+							"value": "ETG",
+							"description": "Name of the company",
+							"type": "text"
+						},
+						{
+							"key": "company_activity",
+							"value": "Telecomunicaciones",
+							"description": "Activity of the company",
+							"type": "text"
+						},
+						{
+							"key": "country_company",
+							"value": "2",
+							"description": "Country of the company where worked",
+							"type": "text"
+						},
+						{
+							"key": "job_title",
+							"value": "Desarrollador",
+							"description": "Position that the person played in work  experience",
+							"type": "text"
+						},
+						{
+							"key": "level",
+							"value": "Semi-senior",
+							"description": "Level of expertise - [Junior, Semi-Senior, Senior]",
+							"type": "text"
+						},
+						{
+							"key": "job_description",
+							"value": "Diseñar, programar e implementar",
+							"description": "Description of the job",
+							"type": "text"
+						},
+						{
+							"key": "dependents",
+							"value": "1",
+							"description": "Number of dependents (if applicable)",
+							"type": "text"
+						},
+						{
+							"key": "start",
+							"value": "2011-03-01",
+							"description": "Date since the person started working",
+							"type": "text"
+						},
+						{
+							"key": "ending",
+							"value": "2013-02-28",
+							"description": "End date of work experience",
+							"type": "text"
+						},
+						{
+							"key": "duration",
+							"value": "",
+							"description": "Duration of work experience - It is a calculated field",
+							"type": "text"
+						},
+						{
+							"key": "reference_contact",
+							"value": "Cosme Rojas",
+							"description": "Reference contact",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://fullstack.com/api/experiences",
+					"protocol": "http",
+					"host": [
+						"fullstack",
+						"com"
+					],
+					"path": [
+						"api",
+						"experiences"
+					]
+				},
+				"description": "Add a work experience"
+			},
+			"response": []
+		},
+		{
+			"name": "Update an experience",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "2",
+							"description": "Identifier of work experience",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "ETG GENIELA",
+							"description": "Name of the company",
+							"type": "text"
+						},
+						{
+							"key": "company_activity",
+							"value": "Telecomunicaciones 2",
+							"description": "Activity of the company",
+							"type": "text"
+						},
+						{
+							"key": "country_company",
+							"value": "2",
+							"description": "Country of the company where worked",
+							"type": "text"
+						},
+						{
+							"key": "job_title",
+							"value": "Desarrollador 2",
+							"description": "Position that the person played in work  experience",
+							"type": "text"
+						},
+						{
+							"key": "level",
+							"value": "Semi-senior",
+							"description": "Level of expertise - [Junior, Semi-Senior, Senior]",
+							"type": "text"
+						},
+						{
+							"key": "job_description",
+							"value": "Diseñar, programar e implementar 2",
+							"description": "Description of the job",
+							"type": "text"
+						},
+						{
+							"key": "dependents",
+							"value": "1",
+							"description": "Number of dependents (if applicable)",
+							"type": "text"
+						},
+						{
+							"key": "start",
+							"value": "2011-03-01",
+							"description": "Date since the person started working",
+							"type": "text"
+						},
+						{
+							"key": "ending",
+							"value": "2013-02-28",
+							"description": "End date of work experience",
+							"type": "text"
+						},
+						{
+							"key": "duration",
+							"value": "",
+							"description": "Duration of work experience - It is a calculated field",
+							"type": "text"
+						},
+						{
+							"key": "reference_contact",
+							"value": "Cosme Rojas",
+							"description": "Reference contact",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://fullstack.com/api/experiences/2",
+					"protocol": "http",
+					"host": [
+						"fullstack",
+						"com"
+					],
+					"path": [
+						"api",
+						"experiences",
+						"2"
+					]
+				},
+				"description": "Update an experience"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an experience",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://fullstack.com/api/experiences/2",
+					"protocol": "http",
+					"host": [
+						"fullstack",
+						"com"
+					],
+					"path": [
+						"api",
+						"experiences",
+						"2"
+					]
+				},
+				"description": "Delete an experience"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all countries",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://fullstack.com/api/countries",
+					"protocol": "http",
+					"host": [
+						"fullstack",
+						"com"
+					],
+					"path": [
+						"api",
+						"countries"
+					]
+				},
+				"description": "Get all backscratchers"
+			},
+			"response": []
+		},
+		{
+			"name": "Get a country by its id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://fullstack.com/api/countries/241",
+					"protocol": "http",
+					"host": [
+						"fullstack",
+						"com"
+					],
+					"path": [
+						"api",
+						"countries",
+						"241"
+					]
+				},
+				"description": "Get a country by its id"
+			},
+			"response": []
+		},
+		{
+			"name": "Add a country",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Albanylandia",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://fullstack.com/api/countries",
+					"protocol": "http",
+					"host": [
+						"fullstack",
+						"com"
+					],
+					"path": [
+						"api",
+						"countries"
+					]
+				},
+				"description": "Add a country"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a country",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Albanyland",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://fullstack.com/api/countries/241",
+					"protocol": "http",
+					"host": [
+						"fullstack",
+						"com"
+					],
+					"path": [
+						"api",
+						"countries",
+						"241"
+					]
+				},
+				"description": "Add a country"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a country",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://fullstack.com/api/countries/241",
+					"protocol": "http",
+					"host": [
+						"fullstack",
+						"com"
+					],
+					"path": [
+						"api",
+						"countries",
+						"241"
+					]
+				},
+				"description": "Delete a country"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user",
+							"value": "luis@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://sb.com/api/login",
+					"protocol": "http",
+					"host": [
+						"sb",
+						"com"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "login"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6b78546a-d549-4e1b-b4d6-f56c20fa025b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6297d544-1e17-436b-bf14-e974fa6204b4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
