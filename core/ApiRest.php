@@ -71,13 +71,8 @@ class ApiRest extends db_model implements iApiRest
      */
     public function put()
     {
-        return $this->set_query(sprintf("
-            UPDATE 
-            %s 
-            SET 
-            %s 
-            WHERE 
-            id = %d", $this->entity, $this->data, $this->id));
+        $sql = $this->set_query(sprintf("UPDATE %s SET %s WHERE id = %d", $this->entity, $this->data, $this->id));
+        return $sql;
     }
 
     /**

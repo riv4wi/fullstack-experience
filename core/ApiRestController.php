@@ -269,7 +269,6 @@ class ApiRestController
                     } else {
                         $this->print_json(200, "Item deleted", $info);
                     }
-
                 } else {
                     $this->print_json(200, false, null);
                 }
