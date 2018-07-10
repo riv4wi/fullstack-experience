@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12 text-right">
-                                        <a class="add-job" onclick="addExperienceWork()">x</a>
+                                        <a class="add-job click_button_add_experience">x</a>
                                     </div>
                                 </div>
                             </div>
@@ -163,62 +163,14 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/moment-with-locales.js"></script>
 <script src="js/moment-timezone-with-data.js"></script>
+<script src="js/WorkExperience.js"></script>
 <!--<script src="js/ew.js"></script>-->
 
 <script type="text/javascript">
-    function elapsedTime(s_date, e_date) {
-        let start_date = moment(s_date, "YYYY-MM-DD").locale('es');
-        let end_date = moment(e_date, "YYYY-MM-DD").locale('es');
-        let diff = end_date.diff(start_date, 'milliseconds');
-        let duration = moment.duration(diff);
-        let elapsed = '';
+    
+    new WorkExperience();
 
-        let years = duration.years();
-        let months = duration.months(); // duration.asYears();
-        let days = duration.days();
-
-        if (years > 0)
-            elapsed = elapsed + years + ' año(s) ';
-        if (months > 0)
-            elapsed = elapsed + months + ' mes(es) ';
-        if (days > 0)
-            elapsed = elapsed + days + ' día(s)';
-
-        return elapsed;
-    }
-
-    function addExperienceWork() {
-        // Test to see if the browser supports the HTML template element by checking
-        // for the presence of the template element's content attribute.
-        if ('content' in document.createElement('template')) {
-            let tpl_workExperience = document.querySelector('#workExperience').content.cloneNode(true);
-            let experiences = document.querySelector('#experiences');
-            let form = document.querySelector('#formulario');
-
-            if (experiences.innerText === 'No hay experiencia laboral cargada aún.') experiences.innerText = '';
-
-            tpl_workExperience.querySelector('.company').innerText = form.querySelector('#company').value;
-            tpl_workExperience.querySelector('.company_activity').innerText = form.querySelector('#company_activity').value;
-            tpl_workExperience.querySelector('.job_title').innerText = form.querySelector('#job_title').value;
-            tpl_workExperience.querySelector('.country_company').innerText = form.querySelector('#country_company').value;
-            tpl_workExperience.querySelector('.start_company').innerText = form.querySelector('#start_company').value;
-            tpl_workExperience.querySelector('.end_company').innerText = form.querySelector('#end_company').value;
-            let fecha1 = moment(form.querySelector('#start_company').value, "YYYY-MM-DD").locale('es');
-            let fecha2 = moment(form.querySelector('#end_company').value, "YYYY-MM-DD").locale('es');
-            tpl_workExperience.querySelector('.duration').innerText = elapsedTime(fecha1, fecha2);
-            tpl_workExperience.querySelector('.job_description').innerText = form.querySelector('#job_description').value;
-            tpl_workExperience.querySelector('.reference_contact').innerText = form.querySelector('#reference_contact').value;
-            experiences.appendChild(tpl_workExperience);
-
-            // Cleaning the inputs
-            $(":text", $("#form-experience")).val('');
-            form.querySelector('#start_company').value = form.querySelector('#end_company').value = 'dd/mm/yyyy';
-        }
-        else {
-            // Find another way to add the rows to the table because
-            // the HTML template element is not supported.
-        }
-    }
+    
 </script>
 </body>
 </html>

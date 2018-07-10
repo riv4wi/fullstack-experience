@@ -90,7 +90,9 @@ class WorkExperience {
          * @access public
          * @type {Object}
          */
-        this.listeners = {};
+        this.listeners = {
+            click_button_add_experience : '.click_button_add_experience',
+        };
 
         /**
          * Callbacks for server responses.
@@ -115,6 +117,7 @@ class WorkExperience {
             }
         };
 
+        this.activeListeners();
     }
 
 
@@ -351,6 +354,18 @@ class WorkExperience {
 
     }
 
+    /**\
+     * @summary Activar los listener
+     */
+
+     activeListeners()
+     {
+         var self = this;
+         $(self.listeners.click_button_add_experience).on('click',function(){
+            self.addExperienceWork();
+         });
+     }
+
 
     /***************************************
      *                                      *
@@ -487,6 +502,61 @@ class WorkExperience {
                 self.callbacks.on_complete_request();
             }
         });
+    }
+
+    addExperienceWork() {
+        var self = this;
+        // Test to see if the browser supports the HTML template element by checking
+        // for the presence of the template element's content attribute.
+        if ('content' in document.createElement('template')) {
+            let tpl_workExperience = document.querySelector('#workExperience').content.cloneNode(true);
+            let experiences = document.querySelector('#experiences');
+            let form = document.querySelector('#formulario');
+
+            if (experiences.innerText === 'No hay experiencia laboral cargada aún.') experiences.innerText = '';
+
+            tpl_workExperience.querySelector('.company').innerText = form.querySelector('#company').value;
+            tpl_workExperience.querySelector('.company_activity').innerText = form.querySelector('#company_activity').value;
+            tpl_workExperience.querySelector('.job_title').innerText = form.querySelector('#job_title').value;
+            tpl_workExperience.querySelector('.country_company').innerText = form.querySelector('#country_company').value;
+            tpl_workExperience.querySelector('.start_company').innerText = form.querySelector('#start_company').value;
+            tpl_workExperience.querySelector('.end_company').innerText = form.querySelector('#end_company').value;
+            let fecha1 = moment(form.querySelector('#start_company').value, "YYYY-MM-DD").locale('es');
+            let fecha2 = moment(form.querySelector('#end_company').value, "YYYY-MM-DD").locale('es');
+            tpl_workExperience.querySelector('.duration').innerText = self.elapsedTime(fecha1, fecha2);
+            tpl_workExperience.querySelector('.job_description').innerText = form.querySelector('#job_description').value;
+            tpl_workExperience.querySelector('.reference_contact').innerText = form.querySelector('#reference_contact').value;
+            experiences.appendChild(tpl_workExperience);
+
+            // Cleaning the inputs
+            $(":text", $("#form-experience")).val('');
+            form.querySelector('#start_company').value = form.querySelector('#end_company').value = 'dd/mm/yyyy';
+        }
+        else {
+            // Find another way to add the rows to the table because
+            // the HTML template element is not supported.
+        }
+    }
+    
+    elapsedTime(s_date, e_date) {
+        let start_date = moment(s_date, "YYYY-MM-DD").locale('es');
+        let end_date = moment(e_date, "YYYY-MM-DD").locale('es');
+        let diff = end_date.diff(start_date, 'milliseconds');
+        let duration = moment.duration(diff);
+        let elapsed = '';
+
+        let years = duration.years();
+        let months = duration.months(); // duration.asYears();
+        let days = duration.days();
+
+        if (years > 0)
+            elapsed = elapsed + years + ' año(s) ';
+        if (months > 0)
+            elapsed = elapsed + months + ' mes(es) ';
+        if (days > 0)
+            elapsed = elapsed + days + ' día(s)';
+
+        return elapsed;
     }
 
 }
