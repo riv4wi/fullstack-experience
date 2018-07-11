@@ -98,7 +98,7 @@
                                                     <h2 class="box-experience-subtitle company"></h2>
                                                 </div>
                                                 <div class="col-xs-2">
-                                                    <a class="remove-job">x</a>
+                                                    <a class="remove-job click_button_del_experience">x</a>
                                                     <a class="modify-job">x</a>
                                                 </div>
                                             </div>

@@ -92,6 +92,7 @@ class WorkExperience {
          */
         this.listeners = {
             click_button_add_experience : '.click_button_add_experience',
+            click_button_del_experience : '.click_button_del_experience',
         };
 
         /**
@@ -361,8 +362,13 @@ class WorkExperience {
      activeListeners()
      {
          var self = this;
+         debugger;
          $(self.listeners.click_button_add_experience).on('click',function(){
             self.addExperienceWork();
+         });
+
+         $(self.listeners.click_button_del_experience).on('click',function(){
+             alert('Eliminando');
          });
      }
 
@@ -514,7 +520,9 @@ class WorkExperience {
             let form = document.querySelector('#formulario');
 
             if (experiences.innerText === 'No hay experiencia laboral cargada aún.') experiences.innerText = '';
-
+            // tpl_workExperience.querySelector('.remove-job').setAttribute("onclick", "Alert(Paso)");
+            $('#workExperience').find(".remove-job").attr('onClick', 'alert(this);');
+            debugger;
             tpl_workExperience.querySelector('.company').innerText = form.querySelector('#company').value;
             tpl_workExperience.querySelector('.company_activity').innerText = form.querySelector('#company_activity').value;
             tpl_workExperience.querySelector('.job_title').innerText = form.querySelector('#job_title').value;
